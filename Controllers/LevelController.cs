@@ -7,7 +7,13 @@ namespace OpenApiSelfReferenceRepro.Controllers
     public class LevelController : ControllerBase
     {
         [HttpGet(Name = "GetLevels")]
-        public LevelResponse GetLevels()
+        public IReadOnlyList<Level1> GetLevels()
+        {
+            return [];
+        }
+
+        [HttpGet("l2", Name = "GetLevels2")]
+        public Level1 GetLevels2()
         {
             return new();
         }
